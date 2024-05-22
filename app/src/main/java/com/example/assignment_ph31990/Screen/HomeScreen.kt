@@ -117,19 +117,20 @@ fun HomeScreen(){
                 Product(R.drawable.product2, "Simple Desk", "$50.00"),
                 Product(R.drawable.product1, "Simple Desk", "$30.00"),
                 Product(R.drawable.product1, "Simple Desk", "$30.00"),
+                Product(R.drawable.product3, "Coffee Chair", "$20.00"),
+                Product(R.drawable.product3, "Coffee Chair", "$20.00"),
             )
 
             LazyVerticalGrid(
-                columns = GridCells.Fixed(2), // Số lượng cột cố định là 2
+                columns = GridCells.Fixed(2),
                 modifier = Modifier.fillMaxWidth(),
                 contentPadding = PaddingValues(16.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 items(items = products) { product ->
                     ProductRow(item = product) {
-                        // Khi hình ảnh được click, chuyển sang ProductDetailActivity
                         val intent = Intent(context, ProductDetailActivity::class.java)
-                        intent.putExtra("productId", product.image) // Ví dụ, truyền ID sản phẩm
+                        intent.putExtra("productId", product.image)
                         context.startActivity(intent)
                     }
                 }

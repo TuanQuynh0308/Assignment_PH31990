@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -32,6 +33,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -75,7 +77,7 @@ fun RegisterScreen() {
         Image(
             painter = painterResource(id = R.drawable.logo), // Replace with your logo
             contentDescription = null,
-            modifier = Modifier.size(50.dp)
+            modifier = Modifier.size(70.dp)
         )
 
         Spacer(modifier = Modifier.height(30.dp))
@@ -88,103 +90,116 @@ fun RegisterScreen() {
         )
 
         Spacer(modifier = Modifier.height(16.dp))
-
-        OutlinedTextField(
-            value = name,
-            onValueChange = { name = it },
-            label = { Text("Name") },
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(10.dp)
-        )
+                .shadow(4.dp)
+                .background(Color.White, shape = RoundedCornerShape(8.dp))
 
-        Spacer(modifier = Modifier.height(8.dp))
-
-
-        OutlinedTextField(
-            value = email,
-            onValueChange = { email = it },
-            label = { Text("Email") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        OutlinedTextField(
-            value = password,
-            onValueChange = { password = it },
-            label = { Text("Password") },
-            visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-            trailingIcon = {
-                val image = if (passwordVisible)
-                    painterResource(id = R.drawable.eye)
-                else
-                    painterResource(id = R.drawable.eye)
-
-                IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                    Image(painter = image, contentDescription = null,
-                        modifier = Modifier.size(25.dp)
-                    )
-                }
-            },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-        OutlinedTextField(
-            value = confirmPassword,
-            onValueChange = { confirmPassword = it },
-            label = { Text("Password") },
-            visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-            trailingIcon = {
-                val image = if (passwordVisible)
-                    painterResource(id = R.drawable.eye)
-                else
-                    painterResource(id = R.drawable.eye)
-
-                IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                    Image(painter = image, contentDescription = null,
-                        modifier = Modifier.size(25.dp)
-                    )
-                }
-            },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-        )
-
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        val context = LocalContext.current
-        Button(
-            onClick = { val intent = Intent(context, LoginActivity::class.java)
-                context.startActivity(intent) },
-            colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-            shape = RoundedCornerShape(8.dp),
-            modifier = Modifier
-                .padding(10.dp)
-                .height(48.dp)
-                .width(200.dp)
         ) {
-            Text("Sign Up")
+            Column(
+                modifier = Modifier.padding(10.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                OutlinedTextField(
+                    value = name,
+                    onValueChange = { name = it },
+                    label = { Text("Name") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp)
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = { email = it },
+                    label = { Text("Email") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp)
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                OutlinedTextField(
+                    value = password,
+                    onValueChange = { password = it },
+                    label = { Text("Password") },
+                    visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                    trailingIcon = {
+                        val image = if (passwordVisible)
+                            painterResource(id = R.drawable.eye)
+                        else
+                            painterResource(id = R.drawable.eye)
+
+                        IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                            Image(painter = image, contentDescription = null,
+                                modifier = Modifier.size(25.dp)
+                            )
+                        }
+                    },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp)
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+                OutlinedTextField(
+                    value = confirmPassword,
+                    onValueChange = { confirmPassword = it },
+                    label = { Text("Password") },
+                    visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                    trailingIcon = {
+                        val image = if (passwordVisible)
+                            painterResource(id = R.drawable.eye)
+                        else
+                            painterResource(id = R.drawable.eye)
+
+                        IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                            Image(painter = image, contentDescription = null,
+                                modifier = Modifier.size(25.dp)
+                            )
+                        }
+                    },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp)
+                )
+
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                val context = LocalContext.current
+                Button(
+                    onClick = { val intent = Intent(context, LoginActivity::class.java)
+                        context.startActivity(intent) },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
+                    shape = RoundedCornerShape(8.dp),
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .height(48.dp)
+                        .width(200.dp)
+                ) {
+                    Text("Sign Up")
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+
+                TextButton(onClick = {
+
+                    val intent = Intent(context, LoginActivity::class.java)
+                    context.startActivity(intent)
+                }) {
+                    Text("Already have account? SIGN IN")
+                }
+            }
         }
 
-        Spacer(modifier = Modifier.height(8.dp))
-
-
-        TextButton(onClick = {
-
-            val intent = Intent(context, LoginActivity::class.java)
-            context.startActivity(intent)
-        }) {
-            Text("Already have account? SIGN IN")
-        }
     }
 }
