@@ -41,11 +41,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 
 class RegisterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,13 +84,17 @@ fun RegisterScreen() {
         )
 
         Spacer(modifier = Modifier.height(30.dp))
+        Box(Modifier.fillMaxWidth()) {
+            Text(
+                text = "WELCOME",
+                fontSize = 24.sp,
+                fontFamily = Merriweather,
+                textAlign = TextAlign.Left,
+                modifier = Modifier.padding(start = 20.dp)
+            )
+        }
 
 
-        Text(
-            text = "WELCOME",
-            fontSize = 32.sp,
-            fontWeight = FontWeight.SemiBold
-        )
 
         Spacer(modifier = Modifier.height(16.dp))
         Box(
@@ -185,7 +192,10 @@ fun RegisterScreen() {
                         .height(48.dp)
                         .width(200.dp)
                 ) {
-                    Text("Sign Up")
+                    Text(text = "SIGN UP",
+                        fontSize = 18.sp,
+                        fontFamily = NunitoSans,
+                        color = Color.White)
                 }
 
                 Spacer(modifier = Modifier.height(8.dp))
@@ -196,7 +206,10 @@ fun RegisterScreen() {
                     val intent = Intent(context, LoginActivity::class.java)
                     context.startActivity(intent)
                 }) {
-                    Text("Already have account? SIGN IN")
+                    Text(text = "Already have account? SIGN IN",
+                        fontSize = 14.sp,
+                        fontFamily = NunitoSans,
+                        color = Color.Black)
                 }
             }
         }

@@ -35,6 +35,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 
 class ProductDetailActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,8 +92,9 @@ fun ProductDetailScreen(){
             ) {
                 Text(
                     text = "Minimal Stand",
-                    fontSize = 30.sp,
+                    fontSize = 24.sp,
                     lineHeight = 31.sp,
+                    fontFamily = Merriweather
                 )
                 Spacer(modifier = Modifier.height(5.dp))
                 Row(
@@ -103,7 +106,7 @@ fun ProductDetailScreen(){
                         text = "$ 50",
                         fontSize = 35.sp,
                         lineHeight = 31.sp,
-                        fontWeight = FontWeight.SemiBold
+                        fontFamily = NunitoSans
                     )
                     Row {
                         Image(
@@ -116,6 +119,7 @@ fun ProductDetailScreen(){
                             text = "  01  ",
                             fontSize = 27.sp,
                             lineHeight = 31.sp,
+                            fontFamily = NunitoSans
                         )
                         Image(
                             painter = painterResource(id = R.drawable.img_minus), // Replace with your logo
@@ -141,13 +145,15 @@ fun ProductDetailScreen(){
                         text = " 4.5    ",
                         fontSize = 20.sp,
                         lineHeight = 31.sp,
-                        fontWeight = FontWeight.SemiBold
+                        fontWeight = FontWeight.SemiBold,
+                        fontFamily = NunitoSans
                     )
                     Text(
                         text = "  (50 reviews)",
                         fontSize = 15.sp,
                         lineHeight = 31.sp,
-                        color = Color.Gray
+                        color = Color.Gray,
+                        fontFamily = NunitoSans
                     )
 
                 }
@@ -157,7 +163,7 @@ fun ProductDetailScreen(){
                     fontSize = 15.sp,
                     color = Color.Gray,
                     lineHeight = 20.sp,
-
+                    fontFamily = NunitoSans
                     )
                 Spacer(modifier = Modifier.height(10.dp))
                 Row(
@@ -187,6 +193,7 @@ fun ProductDetailScreen(){
                             text = "Add to cart",
                             fontSize = 20.sp,
                             lineHeight = 31.sp,
+                            fontFamily = NunitoSans
                         )
                     }
                 }

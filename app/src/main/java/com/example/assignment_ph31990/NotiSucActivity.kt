@@ -34,6 +34,8 @@ import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.assignment_ph31990.Screen.HomeScreen
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 
 class NotiSucActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,7 +60,8 @@ fun NotiScreen(){
             text = "SUCCESS!",
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Black
+            color = Color.Black,
+            fontFamily = Merriweather
         )
         Image(
             painter = painterResource(id = R.drawable.img_suc),
@@ -70,13 +73,15 @@ fun NotiScreen(){
             )
         Text(
             text = "Your order will be delivered soon.",
-            fontSize = 20.sp,
-            color = Color.Gray
+            fontSize = 18.sp,
+            color = Color.Gray,
+            fontFamily = NunitoSans
         )
         Text(
             text = "Thank you for choosing our app!",
-            fontSize = 20.sp,
-            color = Color.Gray
+            fontSize = 18.sp,
+            color = Color.Gray,
+            fontFamily = NunitoSans
         )
         Button(
             onClick = {
@@ -93,6 +98,7 @@ fun NotiScreen(){
                 text = "Track your orders",
                 fontSize = 20.sp,
                 lineHeight = 31.sp,
+                fontFamily = NunitoSans
             )
         }
         Button(
@@ -112,7 +118,8 @@ fun NotiScreen(){
                 text = "BACK TO HOME",
                 fontSize = 20.sp,
                 lineHeight = 31.sp,
-                color = Color.Black
+                color = Color.Black,
+                fontFamily = NunitoSans
             )
         }
     }

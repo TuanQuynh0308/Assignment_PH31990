@@ -39,6 +39,8 @@ import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
 import com.example.assignment_ph31990.ProductDetailActivity
 import com.example.assignment_ph31990.R
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 import org.w3c.dom.Text
 
 data class Item(val image: Int, val text: String)
@@ -75,15 +77,16 @@ fun HomeScreen(){
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "Hello !",
+                        text = "Make home",
                         fontSize = 20.sp,
-                        fontWeight = FontWeight.Thin
+                        fontFamily = Merriweather,
+                        color = Color.Gray
                     )
 
                     Text(
-                        text = "WELCOME BACK",
+                        text = "BEAUTIFUL",
                         fontSize = 22.sp,
-                        fontWeight = FontWeight.SemiBold
+                        fontFamily = Merriweather
                     )
 
                 }
@@ -168,7 +171,8 @@ fun ItemRow(item: Item) {
             Spacer(modifier = Modifier.width(8.dp))
             Text(text = item.text,
                 fontSize = 14.sp,
-                color = Color.Gray
+                color = Color.Gray,
+                fontFamily = NunitoSans
             )
         }
     }
@@ -192,13 +196,14 @@ fun ProductRow(item: Product, onItemClick: () -> Unit) {
         Column {
             Text(text = item.name,
                     fontSize = 15.sp,
-                color = Color.Gray
+                color = Color.Gray,
+                fontFamily = NunitoSans
 
             )
             Text(text = item.price,
                 fontSize = 20.sp,
                 color = Color.Black,
-                fontWeight = FontWeight.Bold)
+                fontFamily = NunitoSans)
         }
     }
 }

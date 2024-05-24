@@ -49,6 +49,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.assignment_ph31990.Screen.ItemRow
 import com.example.assignment_ph31990.Screen.Product
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 
 data class Product(val image: Int, val name: String, val price: String)
 
@@ -92,8 +94,8 @@ fun CartScreen(){
                 )
                 Text(
                     text = "My cart",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 16.sp,
+                    fontFamily = Merriweather,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center
                 )
@@ -156,13 +158,15 @@ fun CartScreen(){
                             text = "Total: ",
                             fontSize = 22.sp,
                             lineHeight = 31.sp,
-                            color = Color.Gray
+                            color = Color.Gray,
+                            fontFamily = NunitoSans
                         )
                         Text(
                             text = "$ 95.00",
                             fontSize = 22.sp,
                             lineHeight = 31.sp,
-                            color = Color.Black
+                            color = Color.Black,
+                            fontFamily = NunitoSans
                         )
 
                     }
@@ -182,6 +186,7 @@ fun CartScreen(){
                             text = "Check out",
                             fontSize = 20.sp,
                             lineHeight = 31.sp,
+                            fontFamily = NunitoSans
                         )
                     }
                 }
@@ -215,13 +220,14 @@ fun ProductRow(item: Product) {
         ) {
             Text(text = item.name,
                 fontSize = 15.sp,
-                color = Color.Gray
-
+                color = Color.Gray,
+                fontFamily = NunitoSans
             )
             Text(text = item.price,
                 fontSize = 20.sp,
                 color = Color.Black,
-                fontWeight = FontWeight.Bold)
+                fontWeight = FontWeight.Bold,
+                fontFamily = NunitoSans)
 
             Spacer(modifier = Modifier.weight(1f))
 
@@ -237,8 +243,9 @@ fun ProductRow(item: Product) {
                 )
                 Text(
                     text = "  01  ",
-                    fontSize = 22.sp,
+                    fontSize = 18.sp,
                     lineHeight = 31.sp,
+                    fontFamily = NunitoSans
                 )
                 Image(
                     painter = painterResource(id = R.drawable.img_minus), // Replace with your logo

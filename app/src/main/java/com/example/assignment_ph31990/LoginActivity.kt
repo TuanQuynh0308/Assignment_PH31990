@@ -47,6 +47,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 
 class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,14 +93,15 @@ fun LoginScreen() {
             Text(
                 text = "Hello !",
                 fontSize = 24.sp,
-                fontWeight = FontWeight.Thin
+                fontFamily = Merriweather,
+                color = Color.Gray
             )
             Spacer(modifier = Modifier.height(15.dp))
 
             Text(
                 text = "WELCOME BACK",
                 fontSize = 32.sp,
-                fontWeight = FontWeight.SemiBold
+                fontFamily = Merriweather
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -155,7 +158,10 @@ fun LoginScreen() {
                     val intent = Intent(context, RegisterActivity::class.java)
                     context.startActivity(intent)
                 }) {
-                    Text("Forgot Password")
+                    Text(text = "Forgot Password",
+                        fontSize = 18.sp,
+                        fontFamily = NunitoSans,
+                        color = Color.Black)
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -173,7 +179,10 @@ fun LoginScreen() {
                         .height(48.dp)
                         .width(200.dp)
                 ) {
-                    Text("Log in")
+                    Text(text = "Log in",
+                        fontSize = 18.sp,
+                        fontFamily = NunitoSans,
+                        color = Color.White)
                 }
 
                 Spacer(modifier = Modifier.height(8.dp))
@@ -184,7 +193,10 @@ fun LoginScreen() {
                     val intent = Intent(context, RegisterActivity::class.java)
                     context.startActivity(intent)
                 }) {
-                    Text("SIGN UP")
+                    Text(text = "SIGN UP",
+                        fontSize = 18.sp,
+                        fontFamily = NunitoSans,
+                        color = Color.Black)
                 }
             }
 

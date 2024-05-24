@@ -34,6 +34,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.assignment_ph31990.CheckOutActivity
 import com.example.assignment_ph31990.R
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 
 data class Cart(val image: Int, val name: String, val price: String)
 @Preview
@@ -63,7 +65,7 @@ fun FavoritesScreen(){
                     Text(
                         text = "Favorites",
                         fontSize = 20.sp,
-
+                        fontFamily = Merriweather
                     )
 
 
@@ -110,6 +112,7 @@ fun FavoritesScreen(){
                     text = "Add all to my cart",
                     fontSize = 20.sp,
                     lineHeight = 31.sp,
+                    fontFamily = NunitoSans
                 )
             }
         }
@@ -139,13 +142,15 @@ fun CartRow(item: Product) {
         ) {
             Text(text = item.name,
                 fontSize = 15.sp,
-                color = Color.Gray
+                color = Color.Gray,
+                fontFamily = NunitoSans
 
             )
             Text(text = item.price,
                 fontSize = 20.sp,
                 color = Color.Black,
-                fontWeight = FontWeight.Bold)
+                fontWeight = FontWeight.Bold,
+                fontFamily = NunitoSans)
 
             Spacer(modifier = Modifier.weight(1f))
 

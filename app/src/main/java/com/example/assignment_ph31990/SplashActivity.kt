@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -34,6 +35,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.assignment_ph31990.ui.theme.Gelasio
+import com.example.assignment_ph31990.ui.theme.Gelasio_Family
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 class SplashActivity : ComponentActivity() {
@@ -65,7 +70,7 @@ fun SplashScreen(){
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(80.dp))
             Column(
                 modifier = Modifier
                     .fillMaxWidth(),
@@ -73,14 +78,14 @@ fun SplashScreen(){
                 Text(
                     text = "MAKE YOUR",
                     fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Left,
+                    fontFamily = Merriweather,
                     color = Color.Gray
                 )
                 Text(
                     text = "HOME BEAUTIFUL",
                     fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
+                    fontFamily = Merriweather,
                     color = Color.Black
                 )
             }
@@ -91,6 +96,7 @@ fun SplashScreen(){
                 fontSize = 18.sp,
                 color = Color.Gray,
                 lineHeight = 40.sp,
+                fontFamily = NunitoSans,
                 modifier = Modifier.padding(horizontal = 32.dp),
 
             )

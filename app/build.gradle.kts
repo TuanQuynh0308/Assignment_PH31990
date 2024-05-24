@@ -77,4 +77,5 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.4.0-alpha04")
     implementation ("androidx.compose.material3:material3:1.0.0-beta01")
     implementation ("androidx.navigation:navigation-compose")
+    implementation ("androidx.compose.ui:ui-text-google-fonts:1.6.7")
 }

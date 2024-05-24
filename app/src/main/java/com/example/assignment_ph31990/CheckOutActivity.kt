@@ -38,6 +38,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.assignment_ph31990.ui.theme.Merriweather
+import com.example.assignment_ph31990.ui.theme.NunitoSans
 
 class CheckOutActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,8 +79,8 @@ fun CheckOut(){
                 )
                 Text(
                     text = "Check out",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 18.sp,
+                    fontFamily = Merriweather,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center
                 )
@@ -96,10 +98,11 @@ fun CheckOut(){
             ) {
 
                 Text(
-                    text = "Check out",
-                    fontSize = 20.sp,
+                    text = "Shipping Address",
+                    fontSize = 18.sp,
                     color = Color.Gray,
                     modifier = Modifier,
+                    fontFamily = NunitoSans
                 )
                 Image(
                     painter = painterResource(id = R.drawable.ic_pen),
@@ -123,8 +126,9 @@ fun CheckOut(){
                 ) {
                     Text(
                         text = "Luu Tuan Quynh ",
-                        fontSize = 20.sp,
+                        fontSize = 18.sp,
                         fontWeight = FontWeight.SemiBold,
+                        fontFamily = NunitoSans,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(10.dp),
@@ -132,11 +136,12 @@ fun CheckOut(){
                     Divider1()
                     Text(
                         text = "25 rue Robert Latouche, Nice, 06200, Côte D’azur, France",
-                        fontSize = 18.sp,
+                        fontSize = 16.sp,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(10.dp),
-                        color = Color.Gray
+                        color = Color.Gray,
+                        fontFamily = NunitoSans
                     )
                 }
             }
@@ -153,9 +158,10 @@ fun CheckOut(){
 
                 Text(
                     text = "Payment",
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     color = Color.Gray,
                     modifier = Modifier,
+                    fontFamily = NunitoSans
                 )
                 Image(
                     painter = painterResource(id = R.drawable.ic_pen),
@@ -191,6 +197,7 @@ fun CheckOut(){
                         fontSize = 20.sp,
                         color = Color.Black,
                         modifier = Modifier,
+                        fontFamily = NunitoSans
                     )
 
                 }
@@ -208,9 +215,10 @@ fun CheckOut(){
 
                 Text(
                     text = "Delivery method",
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     color = Color.Gray,
                     modifier = Modifier,
+                    fontFamily = NunitoSans
                 )
                 Image(
                     painter = painterResource(id = R.drawable.ic_pen),
@@ -243,9 +251,10 @@ fun CheckOut(){
                     )
                     Text(
                         text = "    Fast (2-3days)",
-                        fontSize = 20.sp,
+                        fontSize = 18.sp,
                         color = Color.Black,
                         modifier = Modifier,
+                        fontFamily = NunitoSans
                     )
 
                 }
@@ -275,15 +284,17 @@ fun CheckOut(){
                     ) {
                         Text(
                             text = "Order: ",
-                            fontSize = 22.sp,
+                            fontSize = 18.sp,
                             lineHeight = 31.sp,
-                            color = Color.Gray
+                            color = Color.Gray,
+                            fontFamily = NunitoSans
                         )
                         Text(
                             text = "$ 95.00",
-                            fontSize = 22.sp,
+                            fontSize = 18.sp,
                             lineHeight = 31.sp,
-                            color = Color.Black
+                            color = Color.Black,
+                            fontFamily = NunitoSans
                         )
 
                     }
@@ -297,15 +308,17 @@ fun CheckOut(){
                     ) {
                         Text(
                             text = "Delivery: ",
-                            fontSize = 22.sp,
+                            fontSize = 18.sp,
                             lineHeight = 31.sp,
-                            color = Color.Gray
+                            color = Color.Gray,
+                            fontFamily = NunitoSans
                         )
                         Text(
                             text = "$ 5.00",
-                            fontSize = 22.sp,
+                            fontSize = 18.sp,
                             lineHeight = 31.sp,
-                            color = Color.Black
+                            color = Color.Black,
+                            fontFamily = NunitoSans
                         )
 
                     }
@@ -320,15 +333,17 @@ fun CheckOut(){
                     ) {
                         Text(
                             text = "Total: ",
-                            fontSize = 22.sp,
+                            fontSize = 18.sp,
                             lineHeight = 31.sp,
-                            color = Color.Gray
+                            color = Color.Gray,
+                            fontFamily = NunitoSans
                         )
                         Text(
                             text = "$ 100.00",
-                            fontSize = 22.sp,
+                            fontSize = 17.sp,
                             lineHeight = 31.sp,
-                            color = Color.Black
+                            color = Color.Black,
+                            fontFamily = NunitoSans
                         )
 
                     }
@@ -351,6 +366,7 @@ fun CheckOut(){
                     text = "SUBMIT ORDER",
                     fontSize = 20.sp,
                     lineHeight = 31.sp,
+                    fontFamily = NunitoSans
                 )
             }
 
